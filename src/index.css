@@ -19,3 +19,8 @@ code {
   font-family:"Avenir-Medium";
   src: url("./assets/fonts/AvenirLTStd-Medium.otf");
 }
+
+*{
+  margin: 0;
+  padding: 0;
+}

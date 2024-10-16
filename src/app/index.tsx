@@ -3,6 +3,7 @@ import { Box, Button, Typography } from '@mui/material'
 import { QueryClient, QueryClientProvider } from 'react-query';
 import {  ThemeProvider } from '@mui/material/styles';
 import { Theme } from '../Theme/Theme';
+import Header from '../layout/Header';
 
 
 
@@ -21,8 +22,7 @@ const queryClient = new QueryClient({
   return (
     <ThemeProvider theme={Theme}>
       <QueryClientProvider client={queryClient}>
-       <Typography variant='h1'>Hello</Typography>  <Button variant="contained">hello</Button>
-        <Typography></Typography>
+       <Header />
       </QueryClientProvider> 
     </ThemeProvider>
     
