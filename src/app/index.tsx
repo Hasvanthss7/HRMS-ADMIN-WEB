@@ -4,6 +4,7 @@ import { QueryClient, QueryClientProvider } from 'react-query';
 import {  ThemeProvider } from '@mui/material/styles';
 import { Theme } from '../Theme/Theme';
 import Header from '../layout/Header';
+import ResponsiveDrawer from '../layout/SideBar';
 
 
 
@@ -22,7 +23,7 @@ const queryClient = new QueryClient({
   return (
     <ThemeProvider theme={Theme}>
       <QueryClientProvider client={queryClient}>
-       <Header />
+       <ResponsiveDrawer />
       </QueryClientProvider> 
     </ThemeProvider>
     
