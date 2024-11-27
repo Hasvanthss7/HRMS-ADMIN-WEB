@@ -1,0 +1,41 @@
+# Node modules
+node_modules/
+
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Environment variables
+.env
+
+# Build outputs
+dist/
+build/
+
+# Dependency directories
+jspm_packages/
+
+# Testing
+coverage/
+*.lcov
+
+# Miscellaneous
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+
+# IDE settings
+.idea/
+.vscode/
+*.iml
+
+# Operating System files
+*.sublime-workspace
+*.sublime-project
+
+# Optional: Ignore temporary files created by your editor
+*.tmp
+*.bak
+*.orig
