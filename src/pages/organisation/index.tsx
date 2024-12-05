@@ -16,9 +16,8 @@ import {
   OrganisationHeading,
   OrganisationHolidays,
   // OrganisationHolidays,
-  OrganisationImageField
+  OrganisationImageField,
 } from "./OrganisationOutput";
-
 
 const OrganisationDetails = () => {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
@@ -111,6 +110,7 @@ const OrganisationDetails = () => {
             display: "flex",
             flexDirection: "row",
             justifyContent: "space-between",
+            alignItems: "center",
             backgroundColor: "#A7DAE8",
             // width: "100%",
             px: 2,

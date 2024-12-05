@@ -1,8 +1,8 @@
 import SettingsOutlinedIcon from "@mui/icons-material/SettingsOutlined";
 import { Box, Button, Tab, Tabs } from "@mui/material";
 import React from "react";
-import { Dashboard, Employees, LeaveRequests } from "../assets";
 import { useNavigate } from "react-router-dom";
+import { Dashboard, Employees, LeaveRequests } from "../assets";
 
 const tabsData = [
   {
@@ -23,7 +23,7 @@ const tabsData = [
   {
     label: "Settings",
     icon: <SettingsOutlinedIcon sx={{ color: "#017593" }} />,
-    route: "/settings",
+    route: "/settings/general",
   },
 ];
 // Define the custom styles for active and inactive tabs
@@ -66,7 +66,7 @@ const SideBar: React.FC = () => {
   return (
     <Box
       sx={{
-        width: 240, // Set a fixed width for the sidebar
+        width: "257px", // Set a fixed width for the sidebar
         borderRight: 1,
         borderColor: "divider",
         height: "100%",

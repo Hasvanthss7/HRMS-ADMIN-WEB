@@ -11,15 +11,22 @@ const Layout: React.FC = ({}) => {
       sx={{
         display: "flex",
         flexDirection: "column",
-        height: "100vh",
-        overflow: "hidden",
+        overflowX: "hidden",
       }}
     >
       <Header />
-      <SideBar />
-      <Box sx={{ flexGrow: 1 }}>
-        <Outlet />
-      </Box>{" "}
+      <Box
+        sx={{
+          height: `calc( 100vh - 70px)`,
+          display: "flex",
+          flexDirection: "row",
+        }}
+      >
+        <SideBar />
+        <Box sx={{ width: `calc( 100vw - 257px)` }}>
+          <Outlet />
+        </Box>
+      </Box>
       {/* Main content area */}
     </Box>
   );

@@ -10,16 +10,17 @@ import {
   Tabs,
   Typography,
 } from "@mui/material";
-import React from "react";
+import React, { useEffect } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const tabsData = [
-  { label: "General", route: "/dashboard" },
-  { label: "Departments", route: "/deals" },
-  { label: "Locations", route: "/departments" },
-  { label: "Designations", route: "/settings" },
-  { label: "Holidays", route: "/settings" },
-  { label: "Leaves", route: "/settings" },
-  { label: "Roles & Permissions", route: "/settings" },
+  { label: "General", route: "general" },
+  { label: "Departments", route: "department" },
+  { label: "Locations", route: "departments" },
+  { label: "Designations", route: "designations" },
+  { label: "Holidays", route: "settings" },
+  { label: "Leaves", route: "settings" },
+  { label: "Roles & Permissions", route: "roles-permissions" },
 ];
 
 // Define the custom styles for active and inactive tabs
@@ -54,10 +55,20 @@ const tabStyles = (isActive: boolean) => ({
 
 const SettingsSideBar: React.FC = () => {
   const [value, setValue] = React.useState(0); // Track which tab is active
-
+  const navigate = useNavigate();
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
     setValue(newValue);
   };
+  const location = useLocation();
+
+  useEffect(() => {
+    const t = tabsData.findIndex((tab: any) =>
+      location.pathname.includes(`${tab.route}`)
+    );
+    setValue(t);
+  }, []);
+
+  console.log("location", location.pathname);
 
   return (
     <Box
@@ -78,7 +89,7 @@ const SettingsSideBar: React.FC = () => {
           height: "inherit",
         }}
       >
-        <Box
+        {/* <Box
           sx={{
             padding: "2px",
             backgroundColor: "#A7DAE8",
@@ -90,11 +101,11 @@ const SettingsSideBar: React.FC = () => {
               textTransform: "capitalize",
               fontSize: "18px",
               paddingLeft: 2,
-              }}
+            }}
           >
             Settings
           </Button>
-        </Box>
+        </Box> */}
         <Tabs
           orientation="vertical"
           value={value} // Set the current tab value
@@ -111,6 +122,32 @@ const SettingsSideBar: React.FC = () => {
             },
           }}
         >
+          <Box
+            sx={{
+              padding: "2px",
+              backgroundColor: "#A7DAE8",
+            }}
+          >
+            <Tab
+              label={
+                <Box
+                  sx={{
+                    display: "flex",
+                    flexDirection: "row",
+                    textTransform: "capitalize",
+                    fontSize: "18px",
+                    gap: 1,
+                  }}
+                >
+                  <ArrowBackIcon />
+                  <Typography>Settings</Typography>
+                </Box>
+              }
+              onClick={() => {
+                navigate("/dashboard");
+              }}
+            />
+          </Box>
           <Accordion expanded sx={{ border: "none", boxShadow: "none" }}>
             <AccordionSummary expandIcon={<ExpandMoreIcon />}>
               <Typography
@@ -127,7 +164,10 @@ const SettingsSideBar: React.FC = () => {
                   key={index}
                   label={tab.label}
                   sx={tabStyles(value === index)}
-                  onClick={() => setValue(index)}
+                  onClick={() => {
+                    setValue(index);
+                    navigate(tab.route);
+                  }}
                 />
               ))}
             </AccordionDetails>

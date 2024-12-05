@@ -1,12 +1,12 @@
-
+import { createBrowserRouter } from "react-router-dom";
 import Layout from "../layout/Layout";
 import SettingsLayout from "../layout/SettingsLayout";
-import OrganisationDetails from "../pages/organisation";
+import PeopleDashboard from "../pages/dashboard";
 import Department from "../pages/departments/department";
 import Designation from "../pages/designations/designations";
-import PeopleDashboard from "../pages/dashboard";
 import Login from "../pages/login/login";
-import { createBrowserRouter } from 'react-router-dom';
+import OrganisationDetails from "../pages/organisation";
+import RolesPermissions from "../pages/roles-permissions/roles-permissions";
 
 const router = createBrowserRouter([
   {
@@ -15,19 +15,19 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
+        path: "dashboard",
+        element: <PeopleDashboard />,
       },
     ],
   },
-  {
-path:"/dashboard",
-element: <PeopleDashboard />
-  },
+
   {
     path: "settings",
     element: <SettingsLayout />,
     children: [
       {
         index: true,
+        path: "general",
         element: <OrganisationDetails />,
       },
       {
@@ -35,12 +35,12 @@ element: <PeopleDashboard />
         element: <Department />,
       },
       {
-        path: "designation",
+        path: "designations",
         element: <Designation />,
       },
       {
-        path: "login",
-        element: <Login />,
+        path: "roles-permissions",
+        element: <RolesPermissions />,
       },
     ],
   },
