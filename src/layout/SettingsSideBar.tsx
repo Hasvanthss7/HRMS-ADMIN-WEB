@@ -90,7 +90,7 @@ const SettingsSideBar: React.FC = () => {
               textTransform: "capitalize",
               fontSize: "18px",
               paddingLeft: 2,
-            }}
+              }}
           >
             Settings
           </Button>
