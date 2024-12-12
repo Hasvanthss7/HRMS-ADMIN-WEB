@@ -23,7 +23,7 @@ const Layout: React.FC = ({}) => {
         }}
       >
         <SideBar />
-        <Box sx={{ width: `calc( 100vw - 257px)` }}>
+        <Box sx={{ width: `calc( 100vw - 242px)` }}>
           <Outlet />
         </Box>
       </Box>

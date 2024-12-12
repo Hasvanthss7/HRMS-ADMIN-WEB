@@ -3,7 +3,7 @@ import {
   Box,
   Button,
   Drawer,
-  Grid,
+  Grid2,
   IconButton,
   Typography,
 } from "@mui/material";
@@ -28,13 +28,14 @@ const Department = () => {
   };
 
   return (
-    <Box>
+    <Box sx={{}}>
       {/* Organisation Details Header */}
       <Box
         sx={{
           display: "flex",
           flexDirection: "row",
           justifyContent: "space-between",
+          
         }}
       >
         <OrganisationHeading label="Departments" />
@@ -55,12 +56,26 @@ const Department = () => {
       </Box>
 
       {/* Organisation Info Grid */}
-      <Grid container spacing={4} sx={{ py: 2 }}>
-        <OrganisationDepartment
-          label="Frontend Department"
-          onClick={toggleDrawer(true)}
-        />
-      </Grid>
+      <Grid2 container>
+        <Grid2 size={4}>
+          <OrganisationDepartment
+            label="Frontend Department"
+            onClick={toggleDrawer(true)}
+          />
+        </Grid2>
+        <Grid2 size={4}>
+          <OrganisationDepartment
+            label="Frontend Department"
+            onClick={toggleDrawer(true)}
+          />
+        </Grid2>
+        <Grid2 size={4}>
+          <OrganisationDepartment
+            label="Frontend Department"
+            onClick={toggleDrawer(true)}
+          />
+        </Grid2>
+      </Grid2>
 
       {/* Drawer */}
       <Drawer

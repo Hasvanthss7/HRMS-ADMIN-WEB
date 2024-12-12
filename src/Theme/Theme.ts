@@ -1,5 +1,7 @@
-import { createTheme } from "@mui/material";
+import React from "react";
+import { createTheme, ThemeProvider, Button, styled } from "@mui/material";
 
+// Create your MUI Theme
 export const Theme = createTheme({
   palette: {
     primary: {
@@ -63,19 +65,15 @@ export const Theme = createTheme({
     MuiButton: {
       styleOverrides: {
         root: {
+          backgroundColor: "#007693",
+            color: "#FFFFFF",
+            borderRadius: "8px",
+            textTransform: "capitalize",
           fontSize: "18px",
           fontFamily: "Avenir-medium",
-          textTransform: "capitalize",
-          // color: "inherit",
           opacity: 1,
           paddingRight: 16,
-          borderRadius: "10px",
           boxShadow: "0px 3px 6px #00000029",
-          variants: [
-            {
-              props: { variant: "dashed", color: "primary" },
-            },
-          ],
         },
       },
     },

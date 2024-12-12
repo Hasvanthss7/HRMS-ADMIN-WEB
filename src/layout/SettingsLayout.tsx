@@ -37,7 +37,8 @@ const SettingsLayout: React.FC = () => {
               flexGrow: 1, // Make the outlet container grow
               display: "flex",
               flexDirection: "column",
-              height: "90%", // Ensure it takes up full height
+              height: "90%",
+              width: "calc(100vw - 306px)" ,
             }}
           >
             {/* This ensures background color takes the full height */}

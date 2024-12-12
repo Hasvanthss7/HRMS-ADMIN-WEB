@@ -7,6 +7,8 @@ import Designation from "../pages/designations/designations";
 import Login from "../pages/login/login";
 import OrganisationDetails from "../pages/organisation";
 import RolesPermissions from "../pages/roles-permissions/roles-permissions";
+import Location from "../pages/locations/location";
+import Leaves from "../pages/leaves/leaves";
 
 const router = createBrowserRouter([
   {
@@ -35,8 +37,16 @@ const router = createBrowserRouter([
         element: <Department />,
       },
       {
+        path: "location",
+        element: <Location />,
+      },
+      {
         path: "designations",
         element: <Designation />,
+      },
+      {
+        path: "leaves",
+        element: <Leaves />,
       },
       {
         path: "roles-permissions",

@@ -10,17 +10,20 @@ import {
   Tabs,
   Typography,
 } from "@mui/material";
+import LogoutIcon from '@mui/icons-material/Logout';
+import ApartmentIcon from "@mui/icons-material/Apartment";
 import React, { useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 
 const tabsData = [
   { label: "General", route: "general" },
   { label: "Departments", route: "department" },
-  { label: "Locations", route: "departments" },
+  { label: "Locations", route: "location" },
   { label: "Designations", route: "designations" },
   { label: "Holidays", route: "settings" },
-  { label: "Leaves", route: "settings" },
+  { label: "Leaves", route: "leaves" },
   { label: "Roles & Permissions", route: "roles-permissions" },
+  
 ];
 
 // Define the custom styles for active and inactive tabs
@@ -73,7 +76,7 @@ const SettingsSideBar: React.FC = () => {
   return (
     <Box
       sx={{
-        width: 240, // Set a fixed width for the sidebar
+        width: "306px", // Set a fixed width for the sidebar
         borderRight: 1,
         borderColor: "divider",
         height: "100%",
@@ -150,10 +153,12 @@ const SettingsSideBar: React.FC = () => {
           </Box>
           <Accordion expanded sx={{ border: "none", boxShadow: "none" }}>
             <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+            <ApartmentIcon color="primary"  />
+
               <Typography
                 color="primary"
                 variant="h6"
-                sx={{ paddingLeft: 2, fontSize: "18px" }}
+                sx={{ paddingLeft: 1, fontSize: "18px" }}
               >
                 Organisation
               </Typography>
@@ -174,18 +179,27 @@ const SettingsSideBar: React.FC = () => {
           </Accordion>
         </Tabs>
 
-        <Button
-          sx={{
-            fontSize: "18px",
-            fontFamily: "Avenir-medium",
-            textTransform: "capitalize",
-            color: "inherit",
-            opacity: 0.6,
-            paddingRight: 16,
-          }}
-        >
-          Logout
-        </Button>
+        <Tab
+              label={
+                <Box
+                  sx={{
+                    display: "flex",
+                    flexDirection: "row",
+                    alignItems:"flex-start",
+                    textTransform: "capitalize",
+                    fontSize: "18px",
+                    gap: 1,
+                    color:"#9AC4CF"
+                  }}
+                >
+                  <LogoutIcon style={{ transform: "scaleX(-1)" }} />
+                  <Typography>Logout</Typography>
+                </Box>
+              }
+              onClick={() => {
+                navigate("/dashboard");
+              }}
+            />
       </Box>
     </Box>
   );

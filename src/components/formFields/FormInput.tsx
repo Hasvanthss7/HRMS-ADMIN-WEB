@@ -12,9 +12,9 @@ interface FormInputprops {
 const FormInput = (props: FormInputprops) => {
   return (
     <Box sx={{}}>
-      <label>{props.label}</label>
+      <label style={{ opacity: 0.6 }}>{props.label}</label>
       <TextField
-        sx={{ marginTop: "5px" }}
+        sx={{ marginTop: "12px" }}
         fullWidth
         size="small"
         variant="outlined"

@@ -4,6 +4,7 @@ import {
   Button,
   Drawer,
   Grid,
+  Grid2,
   IconButton,
   Typography,
 } from "@mui/material";
@@ -55,12 +56,14 @@ const Designation = () => {
       </Box>
 
       {/* Organisation Info Grid */}
-      <Grid container spacing={4} sx={{ py: 2 }}>
+      <Grid2 container  >
+      <Grid2 size={4}>
         <OrganisationDepartment
           label="UI/UX Designer"
           onClick={toggleDrawer(true)}
         />
-      </Grid>
+        </Grid2>
+      </Grid2>
 
       {/* Drawer */}
       <Drawer

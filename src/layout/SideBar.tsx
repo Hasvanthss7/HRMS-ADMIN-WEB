@@ -1,8 +1,9 @@
 import SettingsOutlinedIcon from "@mui/icons-material/SettingsOutlined";
-import { Box, Button, Tab, Tabs } from "@mui/material";
+import { Box, Button, Tab, Tabs, Typography } from "@mui/material";
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { Dashboard, Employees, LeaveRequests } from "../assets";
+import LogoutIcon from '@mui/icons-material/Logout';
 
 const tabsData = [
   {
@@ -66,7 +67,7 @@ const SideBar: React.FC = () => {
   return (
     <Box
       sx={{
-        width: "257px", // Set a fixed width for the sidebar
+        width: "242px", // Set a fixed width for the sidebar
         borderRight: 1,
         borderColor: "divider",
         height: "100%",
@@ -108,18 +109,27 @@ const SideBar: React.FC = () => {
             />
           ))}
         </Tabs>
-        <Button
-          sx={{
-            fontSize: "18px",
-            fontFamily: "Avenir-medium",
-            textTransform: "capitalize",
-            color: "inherit",
-            opacity: 0.6,
-            paddingRight: 16,
-          }}
-        >
-          Logout
-        </Button>
+        <Tab
+              label={
+                <Box
+                  sx={{
+                    display: "flex",
+                    flexDirection: "row",
+                    alignItems:"flex-start",
+                    textTransform: "capitalize",
+                    fontSize: "18px",
+                    gap: 1,
+                    color:"#9AC4CF"
+                  }}
+                >
+                  <LogoutIcon style={{ transform: "scaleX(-1)" }} />
+                  <Typography>Logout</Typography>
+                </Box>
+              }
+              onClick={() => {
+                navigate("/dashboard");
+              }}
+            />
       </Box>
     </Box>
   );
